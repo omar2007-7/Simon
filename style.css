@@ -15,6 +15,7 @@ body {
     flex-direction: column;
     gap: 2rem;
     padding: 1rem;
+    background-color: wheat;
 }
 .container {
     transition: 1s all ease;
