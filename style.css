@@ -85,7 +85,7 @@ button:hover {
     background-color: rgb(27, 207, 27);
 }
 
-h1 {
+h2{
     font-family: sans-serif;
     font-weight: bold;
 }
@@ -93,6 +93,10 @@ p{
     transform: 1s all;
     font-size: large;
     font-weight: bold;
+}
+#high{
+    transition: 1s all ;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 
@@ -118,6 +122,28 @@ p{
     p{
         font-size: small;
     }
+    #high{
+        font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+}
     
     
 }
+@media (max-width: 300px) {
+    .container {
+          
+        width: 10rem;
+
+    }
+    button {
+
+        width: 8rem;
+    }
+    .squares {
+        width: 8rem;
+
+    }
+}
+    
+
