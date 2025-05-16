@@ -1,10 +1,11 @@
 const squares = $(".squares");
 const start = $("#start");
-
-const h = $("h1");
+const high = $("#high");
+const h = $("h2");
 const body = $("body");
 const p = $("#p");
 
+let highLevel = 0.
 let sequence = [];
 let mySequence = [];
 let i = 0;
@@ -42,9 +43,15 @@ function buttonClick() {
             setTimeout(() => {
                 th.removeClass("wrong");
                 body.removeClass("bad");
-            }, 100);
+            }, 200);
+            if((highLevel<level)){
+
+                highLevel = level;
+            }
             starts();
             h.text("Level : " + level);
+        
+            high.text("highest Level : " + highLevel)
             setTimeout(() => {
                 sequences();
             }, 500);
@@ -72,7 +79,7 @@ function starts() {
     mySequence = [];
     i = 0;
     level = 0;
-    p.text("if something goes wrong click start.")
+    p.text("if something goes wrong click start.");
     squares.off("click");
     buttonClick();
 }
