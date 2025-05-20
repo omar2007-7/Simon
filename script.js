@@ -88,8 +88,11 @@ function playAudio(color) {
     const a = new Audio(`./sounds/${color}.mp3`);
     a.play();
 }
+
+// keypress function
 doc.keypress(function (e) {
-    const key = e.key;
+    const key = e.key.toLowerCase();
+
     switch (key) {
         case "b":
             keyP("blue");
