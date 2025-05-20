@@ -88,3 +88,6 @@ function playAudio(color) {
     const a = new Audio(`./sounds/${color}.mp3`);
     a.play();
 }
+
+
+
