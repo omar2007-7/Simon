@@ -1,11 +1,12 @@
 const squares = $(".squares");
 const start = $("#start");
 const high = $("#high");
-const h = $("h2");
+const h = $("#get");
 const body = $("body");
 const p = $("#p");
+const doc = $(document);
 
-let highLevel = 0.
+let highLevel = 0;
 let sequence = [];
 let mySequence = [];
 let i = 0;
@@ -44,14 +45,13 @@ function buttonClick() {
                 th.removeClass("wrong");
                 body.removeClass("bad");
             }, 200);
-            if((highLevel<level)){
-
+            if (highLevel < level) {
                 highLevel = level;
             }
             starts();
             h.text("Level : " + level);
-        
-            high.text("highest Level : " + highLevel)
+
+            high.text("highest Level : " + highLevel);
             setTimeout(() => {
                 sequences();
             }, 500);
@@ -88,6 +88,61 @@ function playAudio(color) {
     const a = new Audio(`./sounds/${color}.mp3`);
     a.play();
 }
+doc.keypress(function (e) {
+    const key = e.key;
+    switch (key) {
+        case "b":
+            keyP("blue");
+            break;
 
+        case "p":
+            keyP("purple");
+            break;
 
+        case "y":
+            keyP("yellow");
+            break;
 
+        case "o":
+            keyP("orange");
+            break;
+    }
+});
+
+function keyP(color) {
+    const th = $("#" + color);
+    mySequence.push(color);
+
+    if (mySequence[i] === sequence[i]) {
+        playAudio(mySequence[i]);
+        th.addClass("right");
+        setTimeout(() => {
+            th.removeClass("right");
+        }, 100);
+        i++;
+        if (i >= sequence.length) {
+            nextLevel();
+            console.log(" if right and i>" + level);
+            sequences();
+            h.text("Level : " + level);
+        }
+    } else {
+        playAudio("wrong");
+        th.addClass("wrong");
+        body.addClass("bad");
+        setTimeout(() => {
+            th.removeClass("wrong");
+            body.removeClass("bad");
+        }, 200);
+        if (highLevel < level) {
+            highLevel = level;
+        }
+        starts();
+        h.text("Level : " + level);
+
+        high.text("highest Level : " + highLevel);
+        setTimeout(() => {
+            sequences();
+        }, 500);
+    }
+}
