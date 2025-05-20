@@ -37,6 +37,10 @@ body {
     transform: 1s border-radius;
     border: 1px solid;
     border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 #blue {
     background-color: blue;
