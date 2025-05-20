@@ -85,11 +85,15 @@ button:hover {
     transition: 1s all;
     background-color: rgb(27, 207, 27);
 }
-
 h2{
     font-family: sans-serif;
     font-weight: bold;
 }
+#get{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
 p{
     transform: 1s all;
     font-size: large;

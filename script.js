@@ -1,7 +1,7 @@
 const squares = $(".squares");
 const start = $("#start");
 const high = $("#high");
-const h = $("h2");
+const h = $("#get");
 const body = $("body");
 const p = $("#p");
 
